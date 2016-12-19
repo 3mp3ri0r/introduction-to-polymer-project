@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>elemen-notifikasi demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../elemen-notifikasi.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      elemen-notifikasi {
+        --elemen-notifikasi-background: #0ff;
+        --elemen-notifikasi-color: #f0f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic elemen-notifikasi demo</h3>
+      <demo-snippet>
+        <template>
+          <elemen-notifikasi id="hapus" kata-kata="Tidak Tampil"></elemen-notifikasi>
+          <elemen-notifikasi id="tidak" kata-kata="Tampil"></elemen-notifikasi>
+          <script>
+            document.getElementById('hapus').hapus=true;
+            document.getElementById('tidak').hapus=false;
+          </script>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`elemen-notifikasi`
+Elemen untuk menampilkan notifikasi
+
+@demo demo/index.html 
+-->
+
+<dom-module id="elemen-notifikasi">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      h2 {
+        background-color: #000;
+        color: #fff;
+        padding: 24px;
+      }
+    </style>
+    <h2 hidden$="[[status]]">[[pesan]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'elemen-notifikasi',
+
+      properties: {
+        pesan: {
+          type: String,
+          value: 'Naufal',
+        },
+        status: {
+          type: Boolean,
+          value: true
+        }
+      },
+
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`elemen-notifikasi`
+Elemen untuk menampilkan notifikasi
+
+@demo demo/index.html 
+-->
+
+<dom-module id="elemen-notifikasi">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'elemen-notifikasi',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'elemen-notifikasi',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

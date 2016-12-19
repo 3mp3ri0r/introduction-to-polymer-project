@@ -1,0 +1,43 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`elemen-notifikasi`
+Elemen untuk menampilkan notifikasi
+
+@demo demo/index.html 
+-->
+
+<dom-module id="elemen-notifikasi">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      h2 {
+        background-color: var(--elemen-notifikasi-background, #000);
+        color: var(--elemen-notifikasi-color, #fff);
+        padding: 24px;
+      }
+    </style>
+    <h2 hidden$="[[hapus]]">[[kataKata]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'elemen-notifikasi',
+
+      properties: {
+        kataKata: {
+          type: String,
+          value: '',
+        },
+        hapus: {
+          type: Boolean,
+          value: true
+        }
+      },
+
+    });
+  </script>
+</dom-module>

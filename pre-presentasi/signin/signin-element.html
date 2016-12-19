@@ -1,0 +1,74 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="../iron-form/iron-form.html">
+
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-card/paper-card.html">
+<link rel="import" href="../paper-input/paper-input.html">
+
+<link rel="import" href="./elemen-notifikasi.html">
+
+<!--
+`signin-element`
+Element created for signin content
+
+@demo demo/index.html 
+-->
+
+<dom-module id="signin-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <elemen-notifikasi hapus="{{hapus}}" kata-kata="[[pesan]]"></elemen-notifikasi>
+    <form is="iron-form" id="form" method="post" action="/form/handler">
+      <paper-card heading="Sign In" elevation="1" animated-shadow="false">
+        <div class="card-content">
+          <paper-input
+            id="email"
+            type="email"
+            label="Email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            error-message="Format email tidak valid"
+            value="[[email]]">
+          </paper-input>
+          <paper-input
+            id="password"
+            type="password"
+            label="Password"
+            value="[[password]]">
+          </paper-input>
+        </div>
+        <div class="card-actions">
+          <paper-button raised on-tap="_checkSignIn">Submit</paper-button>
+        </div>
+      </paper-card>
+    </form>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'signin-element',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'signin-element',
+        },
+      },
+
+      _checkSignIn: function() {
+        if (this.$.form.validate()) {
+          console.log(this.$.email.value);
+          this.pesan = 'Halo ' + this.$.email.value;
+          this.hapus = false;
+          this.$.form.reset();
+        }
+      }
+
+    });
+  </script>
+</dom-module>
